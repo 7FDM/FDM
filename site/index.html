@@ -34,6 +34,41 @@ body.dark[data-palette="slate"]{--home-tile:#374957;--home-tile-ink:#f1f5f8;--ho
 .home-view .lineitem,.home-view td{border-color:var(--home-tile-border)}.home-view th{background:var(--home-table);color:var(--home-tile-ink)}
 .home-view .empty{color:var(--home-tile-muted)}
 .home-view .report-actions .tag{color:var(--muted)}
+
+/* Shared interface theme: all views use the same palette tokens. */
+body{--shell-bg:#f3f7f4;--control-bg:#f7faf7;--side-text:#e0eee5;--side-muted:#bcd6c6;--side-border:#ffffff30;--side-hover:#ffffff14}
+body[data-palette="olive"]{--shell-bg:#f2f4ec;--control-bg:#f7f9f1;--side-text:#f1f5e9;--side-muted:#d1ddbf}
+body[data-palette="navy"]{--shell-bg:#f1f5f9;--control-bg:#f7faff;--side-text:#eaf2fb;--side-muted:#ccdef0}
+body[data-palette="slate"]{--shell-bg:#f2f5f7;--control-bg:#f8fafb;--side-text:#eef4f8;--side-muted:#d0dde6}
+body.dark{--shell-bg:#15261e;--control-bg:#20372b;--side-text:#e0eee5;--side-muted:#bcd6c6}
+body.dark[data-palette="olive"]{--shell-bg:#20281a;--control-bg:#2b3522;--side-text:#f1f5e9;--side-muted:#d1ddbf}
+body.dark[data-palette="navy"]{--shell-bg:#142335;--control-bg:#1c3046;--side-text:#eaf2fb;--side-muted:#ccdef0}
+body.dark[data-palette="slate"]{--shell-bg:#202b34;--control-bg:#293945;--side-text:#eef4f8;--side-muted:#d0dde6}
+body,body.dark{--bg:var(--shell-bg);--panel:var(--home-tile);--ink:var(--home-tile-ink);--muted:var(--home-tile-muted);--line:var(--home-tile-border);color-scheme:light}
+body.dark{color-scheme:dark}
+.card,.cabinet-button,.cabinet-tile,.cabinet-example,.qr-panel,dialog,.top{background:var(--home-tile);color:var(--home-tile-ink);border-color:var(--home-tile-border)}
+.cabinet-tile,.qr-panel,.cabinet-example{background:var(--control-bg)}
+.btn,.btn.primary,.home-view .btn,.masthead-theme{background:var(--home-action);color:var(--home-action-ink);border-color:var(--home-action)}
+.btn:not(:disabled):hover,.btn:not(:disabled):focus-visible{outline:2px solid var(--home-tile-muted);outline-offset:2px;filter:brightness(1.06)}
+button.card:not(:disabled):hover,.cabinet-button:not(:disabled):hover{background:var(--home-hover);border-color:var(--home-tile-muted)}
+button.card:focus-visible,.cabinet-button:focus-visible,.strength-tab:focus-visible{outline:2px solid var(--home-tile-muted);outline-offset:2px}
+.cabinet-button[aria-pressed="true"],.strength-tab[aria-pressed="true"]{background:var(--home-hover);border-color:var(--home-tile-muted);box-shadow:inset 0 0 0 1px var(--home-tile-muted)}
+.cabinet-icon,.cabinet-glyph,.cabinet-arrow,.strength-icon,a{color:var(--home-tile-ink)}
+.muted,.tag,.empty,.cabinet-button small,.strength-tab small,.cabinet-add p,.demo-watermark{color:var(--home-tile-muted)}
+input,select,textarea,.sidebar-bottom select{background:var(--control-bg);color:var(--home-tile-ink);border-color:var(--home-tile-border);accent-color:var(--home-action)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--home-tile-muted);outline-offset:1px}
+input::placeholder,textarea::placeholder{color:var(--home-tile-muted);opacity:.85}
+th,.dark th,.home-view th{background:var(--home-table);color:var(--home-tile-ink)}td,.lineitem{border-color:var(--home-tile-border)}
+.tag{background:var(--control-bg);border-color:var(--home-tile-border)}
+aside{color:var(--side-text)}nav button{color:var(--side-text);border:1px solid transparent}nav button.active,nav button:hover,nav button:focus-visible{background:var(--nav-active);color:var(--side-text);border-color:var(--side-border)}nav button:focus-visible{outline:2px solid var(--side-muted);outline-offset:1px}
+.brand-caption,.sidebar-bottom label,.asidefoot{color:var(--side-muted)}.asidefoot{border-color:var(--side-border)}.brand .logo-toggle:hover,.brand .logo-toggle:focus-visible{background:var(--side-hover);outline-color:var(--side-muted)}
+.toast{background:var(--home-action);color:var(--home-action-ink)}
+.notice,.dark .notice,.msg:not(.error){background:var(--home-tile);color:var(--home-tile-ink);border:1px solid var(--home-tile-border)}
+.pill{background:#e9f4ec;color:#194d2e}.pill.out{background:#eaf0fb;color:#385d95}.pill.maint{background:#fff2d9;color:#795314}.pill.off,.pill.late,.msg.error{background:#fbe9e7;color:#923934}
+body.dark .pill{background:#d9eadf;color:#194d2e}body.dark .pill.out{background:#dce8fa;color:#254a7a}body.dark .pill.maint{background:#f6e4b7;color:#68480e}body.dark .pill.off,body.dark .pill.late,body.dark .msg.error{background:#f2d6d3;color:#842e2b}
+/* Preserve contrast of code previews and original image colors. */
+.qr-preview canvas,.demo-pattern{background:#fff}
+
 </style></head><body><div class="layout" id="siteLayout"><aside id="sidebar"><div class="brand"><button type="button" id="menuToggle" class="logo menu-toggle logo-toggle" aria-controls="nav sidebarRole" aria-expanded="true" aria-label="إغلاق القائمة"><img src="/ahda-logo-512.png" width="512" height="512" alt="شعار منظومة عُهدة"></button><span class="brand-caption">اضغط الشعار لطي القائمة</span></div><nav id="nav"></nav><div class="sidebar-bottom" id="sidebarRole"><label for="role">الدور في المحاكاة</label><div class="role"><select id="role" aria-label="محاكاة الدور"><option value="officer">الضابط المسؤول / ضابط التموين</option><option value="manager" selected>مشرف المستودع</option><option value="keeper">أمين المستودع</option></select></div><div class="asidefoot">منظومة عُهدة · نسخة تجريبية 2.0<br>بيانات افتراضية فقط</div></div></aside><button type="button" class="menu-backdrop" id="menuBackdrop" aria-label="إغلاق القائمة" hidden></button><main><header class="top site-masthead"><div class="masthead-identity"><img src="/ahda-logo-512.png" width="512" height="512" alt=""><div><strong>منظومة عُهدة</strong><small>مستودعات السلاح — نسخة عرض</small></div></div><button class="btn masthead-theme" id="theme" aria-label="تبديل المظهر">◐</button></header><div class="content"><div class="notice">بيئة تجريبية محلية — جميع العينات تدريبية خاملة وافتراضية والأشخاص وهميون. لا تُدخل معلومات عسكرية أو شخصية حقيقية. الأدوار وسجل التدقيق للمحاكاة فقط.</div><div id="view"></div></div></main></div><dialog id="detail"></dialog><div id="toast" class="toast hidden" role="status"></div><script>
 'use strict';
 const $=id=>document.getElementById(id), KEY='ahda-warehouse-training-v2';const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const iso=()=>new Date().toISOString(), date=v=>v?new Date(v).toLocaleString('ar-SA',{calendar:'gregory',dateStyle:'short',timeStyle:'short'}):'—';const day=n=>new Date(Date.now()+n*864e5).toISOString();
